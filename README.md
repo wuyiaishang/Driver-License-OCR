@@ -1,5 +1,5 @@
-# Driver-License-OC Dependncy
-Tsseract, freetype, imagemagick@6, ghostscript, openCV, python3
+# Driver-License-OCR Dependncy
+Tesseract, freetype, imagemagick@6, ghostscript, openCV, python3
 
 # What I achieved
 - Login(authenticate)
