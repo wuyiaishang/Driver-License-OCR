@@ -1,0 +1,25 @@
+{% extends "ocr/base.html" %}
+
+{% block title %}
+login
+{% endblock %}
+
+{% block body %}
+
+    <form action="{% url 'ocr:login' %}" method="post">
+    {% csrf_token %}
+     <p>
+         <label for="username">Username: </label>
+         <input type="text" id="username" name="username">
+     </p>
+    <p>
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password">
+    </p>
+    <p>
+        <button type="submit">Login</button>
+        <button type="reset">Reset</button>
+    </p>
+    </form>
+
+{% endblock %}

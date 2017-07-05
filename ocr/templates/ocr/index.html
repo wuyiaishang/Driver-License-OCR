@@ -1,0 +1,33 @@
+{% extends "ocr/base.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block username %}
+    {{ username }}
+{% endblock %}
+
+{% block body %}
+    <div class="form-group">
+        <form action="{% url "ocr:index" %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>
+                <label for="picture">Upload your image file: </label>
+            </p>
+
+            <p>
+                <input id="picture" name="picture" type="file">
+            </p>
+
+            <p>
+                <button type="submit" class="btn btn-default" value="submit">Next Step</button>
+            </p>
+            {{ form.errors }}
+            {{ form.non_field_errors }}
+        </form>
+    </div>
+{% endblock %}
+
+{% block list %}
+{% endblock %}

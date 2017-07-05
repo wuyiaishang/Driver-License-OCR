@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% load staticfiles %}
+
+    <!-- bookstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- add the font -->
+    <link href="http://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- input css files -->
+    <!-- css files below would overlap the bootstraps reference above -->
+    <link rel="stylesheet" type="text/css" href="{% static "ocr/style.css" %}"/>
+</head>
+<body>
+
+<div class="container" id="body-container">
+    <div id="top"><div class="row" ><div class="col-md-9"><h1>Welcome {% block username %}{% endblock %}</h1></div><div class="col-md-3" style="padding-bottom: 0px; margin-bottom: 0px "> <h3 ><a href="{% url "ocr:index" %}" style="color: #444444">Upload a
+                New Picture</a></h3></div></div></div>
+    <div id="middle">
+        <div class="row">
+            <div class="col-md-9" id="middle-right">
+
+                {% block body %}
+                {% endblock %}
+            </div>
+            <div class="col-md-3" id="middle-left"><h3><a href="{% url "ocr:index" %}" style="color: #444444" hidden>Upload a
+                New Picture</a></h3>
+            
+             {% block list %}
+             
+             {% endblock %}
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

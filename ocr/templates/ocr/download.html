@@ -1,0 +1,30 @@
+{% extends "ocr/base.html" %}
+
+{% block title %}
+    download
+{% endblock %}
+
+{% block username %}
+   {{ username }}
+{% endblock %}
+
+{% block body %}
+    <h2>{{ dname }}</h2><h2>{{ dnum }}</h2>
+    <form action="{% url "ocr:download" dname dnum %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        <p>
+            <label for="file_format">Select file format: </label>
+            {{ form.file_format }}
+        </p>
+        <p>
+            <label for="file_name">File name: </label>
+            {{ form.file_name }}
+        </p>
+        <p>
+            <button type="submit" value="submit">Download</button>
+        </p>
+    </form>
+{% endblock %}
+
+{% block list %}
+{% endblock %}

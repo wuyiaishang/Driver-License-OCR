@@ -1,0 +1,63 @@
+{% extends "ocr/base.html" %}
+
+{% block title %}
+    analysis
+{% endblock %}
+
+{% block username %}
+    {{ username }}
+{% endblock %}
+
+{% block body %}
+    <p hidden>{{ pmodel.picture.name }}</p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Original Image</th>
+            <th>Processed Image</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="ttd"><img src="{{ pmodel.picture.url }}" class="img-rounded" alt="Can not find image" width="300"
+                                 height="250"></td>
+            <td class="ttd"><img src="/media/media/g_img.jpg" class="img-rounded" alt="Can not find image" width="300"
+                                 height="250"></td>
+        </tr>
+        </tbody>
+    </table>
+    <form action="{% url "ocr:analysis" %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>
+            <label for="dname">Driver Name: </label>
+            <input type="text" id="dname" name="dname" value="{{ dname }}">
+        </p>
+
+        <p>
+            <label for="dnum">License Number: </label>
+            <input type="text" id="dnum" name="dnum" value="{{ dnum }}">
+        </p>
+
+        <p>
+            <button type="submit" value="submit">Next Step</button>
+        </p>
+    </form>
+
+{% endblock %}
+
+{% block list %}
+    <h3>Other Related Word(Driver Name)</h3><button data-toggle="collapse" data-target="#rename" class="btn btn-info">Show/hiden</button>
+
+    <div id="rename" class="collapse">
+        {% for s in rstr %}
+        <p>{{ s }}</p>
+    {% endfor %}
+    </div>
+
+    <h3>Other Related Word(Driver License Number)</h3><button data-toggle="collapse" data-target="#renum" class="btn btn-info">Show/hiden</button>
+    <div id="renum" class="collapse">
+        {% for d in rd %}
+        <p>{{ d }}</p>
+    {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,49 @@
+body {
+
+  background: white url("images/background.jpg");
+}
+
+
+
+#body-container{
+  margin-top: 80px;
+  margin-left: 60px;
+}
+
+#top{
+  padding-bottom: 10px;
+  border-bottom: solid;
+  border-bottom-color: dimgray;
+}
+
+#middle-right{
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  border-right: solid;
+  border-right-color: dimgray;
+}
+
+#middle-right-title{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#middle-right-but{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#middle-left{
+  text-align: center;
+  margin-top: 40px;
+}
+
+#picture{
+    padding-left: 40%;
+}
+
+.ttd{
+    padding-left: 0px;
+}
