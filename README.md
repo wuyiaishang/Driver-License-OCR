@@ -1,5 +1,5 @@
 # Driver-License-OCR Dependncy
-Tesseract, freetype, imagemagick@6, ghostscript, openCV, python3
+Tesseract, freetype, imagemagick@6, ghostscript, openCV, python3. Django
 
 # What I achieved
 - Login(authenticate)
